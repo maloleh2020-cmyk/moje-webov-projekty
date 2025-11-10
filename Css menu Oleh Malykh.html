@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Malykh Oleh: Stránka CSS</title>
+    <meta name="keywords" content="HTML, CSS">
+    <meta name="author" content="Oleh Malykh">
+    <style type="text/css">
+        body {
+            background: #6699ff;
+            margin: 5px;
+            padding: 0;
+            font-size: 1.9em;
+            font-family: Arial, sans-serif;
+        }
+
+        .hlavicka {
+            background-image: url("texture.jpg");
+            border: 2px solid yellow;
+            border-bottom: none;
+            height: 100px;
+            margin: 0;
+        }
+
+        .menu {
+            background-color: #cc00ff;
+            border: 2px solid yellow;
+            height: 40px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 100%;
+        }
+
+        .menu ul li {
+            text-align: center;
+        }
+
+        .menu ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 10px 20px;
+            display: block;
+        }
+
+        .menu ul li:hover {
+            background-color: #66ccff
+        }
+
+        .menu ul li a:hover {
+            color: white;
+            text-shadow: 2px 2px 3px rgb(255, 255, 255);
+        }
+
+        
+        .telo {
+            background-color: white;
+            text-align: center;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .telo h2 {
+            background-color: red;
+            color: yellow;
+            padding: 10px;
+            margin-top: 0;
+        }
+
+        .telo p {
+            text-align: center;
+            font-size: 0.9em;
+        }
+
+        .telo em {
+            color: rgb(0, 0, 0);
+            font-style: italic;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="hlavicka"></div>
+
+    <div class="menu">
+        <ul>
+            <li><a href="#">Položka 1</a></li>
+            <li><a href="#">Položka 2</a></li>
+            <li><a href="#">Položka 3</a></li>
+            <li><a href="#">Položka 4</a></li>
+            <li><a href="#">CSS NavBar</a></li>
+        </ul>
+    </div>
+    <div class="telo">
+        <h2>Lorem Ipsum</h2>
+        <p>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."<br>
+        <em>"Nie je nikto, kto by mal rád bolesť samotnú, kto ju hľadá a chce ju mať, jednoducho lebo je to bolesť..."</em></p>
+        
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut tellus rhoncus, porttitor libero at, interdum enim.
+            Donec orci velit, convallis eget risus quis, scelerisque congue neque. Praesent enim nisl, sodales cursus lacus eget, 
+            blandit tortor. Etiam sollicitudin mi ut rhoncus. Nam tincidunt turpis justo, vitae consequat tellus cursus nec.
+        </p>
+        <p>Donec varius vehicula tincidunt. Praesent egestas eros turpis, non aliquet velit interdum eu. Etiam est metus, tincidunt id felis id, placerat vulputate mauris. Nullam vulputate, sem ut ultricies facilisis, mauris enim vulputate tortor, ac scelerisque purus dolor sit amet neque. Donec gravida turpis enim, eget convallis lorem suscipit non. Vestibulum vel dictum est. In vehicula fermentum libero, et ultrices dui ultricies eget. Pellentesque sit amet lorem imperdiet purus imperdiet feugiat.
+        </p>
+        <p>Sed consequat metus ut mattis viverra. Nullam malesuada facilisis ante sed malesuada. Ut fringilla dolor in mauris sollicitudin suscipit. Aliquam erat volutpat. Curabitur non ipsum posuere, accumsan nisi ut, feugiat nibh. Integer mollis augue dolor, ac condimentum odio malesuada nec. Curabitur ac orci ex. Morbi aliquam lobortis turpis, sed commodo diam. Integer iaculis urna sed ex finibus egestas. Nullam tincidunt vulputate lorem nec consectetur. Cras aliquam mi at orci ullamcorper, id tincidunt quam volutpat. Fusce gravida gravida sagittis.</p>
+
+    </div>
+
+</body>
+</html>

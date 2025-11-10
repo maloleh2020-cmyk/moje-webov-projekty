@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vstupný formulár na prihlásenie sa do konkurzu cez Internet</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .form-container {
+            width: 100%;
+            max-width: 600px;
+            background-color: #ccc; 
+            border: 1px solid #999;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            display: table;
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .form-row {
+            display: table-row;
+            background-color: #e0e0e0;
+        }
+
+        .form-row:nth-child(odd) {
+            background-color: #c9c9c9; 
+        }
+
+        .form-label, .form-input {
+            display: table-cell;
+            padding: 8px 10px;
+            border: 1px solid #a0a0a0;
+            vertical-align: middle;
+        }
+
+        .form-label {
+            font-weight: bold;
+            width: 30%; 
+            white-space: nowrap;
+        }
+
+        input[type="text"], 
+        input[type="password"], 
+        input[type="date"], 
+        select, 
+        textarea {
+            width: 100%;
+            padding: 5px;
+            box-sizing: border-box;
+            border: 1px solid #a0a0a0;
+        }
+
+        
+        .radio-group, .checkbox-group {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        
+        .dropdown-cell {
+            position: relative;
+        }
+
+        .dropdown-cell select {
+            appearance: none; 
+            padding-right: 25px;
+            background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path fill="%23333" d="M6 9l-4-4h8z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 8px center;
+        }
+
+        
+        textarea {
+            min-height: 80px;
+        }
+
+        
+        .form-footer {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 10px;
+            background-color: #888; 
+        }
+
+        .form-footer button {
+            flex-grow: 1;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            color: #333;
+        }
+
+        .form-footer button:first-child {
+            background-color: #d3d3d3;
+            margin-right: 5px;
+        }
+
+        .form-footer button:last-child {
+            background-color: #a9a9a9;
+            margin-left: 5px;
+        }
+
+        
+        fieldset {
+            border: 1px solid #a0a0a0;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #e0e0e0;
+        }
+
+        legend {
+            font-weight: bold;
+            padding: 0 10px;
+            background-color: #a0a0a0;
+            color: white;
+        }
+
+        
+        input:required:invalid:not(:focus) {
+            border-color: red;
+        }
+
+        .required-label::after {
+            content: " *";
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <form action="/submit-application" method="post">
+            
+            <fieldset>
+                <legend>Osobné údaje</legend>
+                <div class="form-row">
+                    <div class="form-label required-label">Priezvisko a meno</div>
+                    <div class="form-input">
+                        <input type="text" name="meno" value="" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-label required-label">Heslo</div>
+                    <div class="form-input">
+                        <input type="password" name="heslo" value="" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-label required-label">Povolenie</div>
+                    <div class="form-input radio-group">
+                        <label><input type="radio" name="odbor" value="pilot" checked required>Pilot</label>
+                        <label><input type="radio" name="odbor" value="letuska"> Letuška</label>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-label required-label">Datum narodenia</div>
+                    <div class="form-input">
+                        <input type="date" name="datum_narodenia" required>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Skúsenosti a vzdelanie</legend>
+                <div class="form-row">
+                    <div class="form-label required-label">Trieda</div>
+                    <div class="form-input dropdown-cell">
+                        <select name="trieda" required>
+                            <optgroup label="Prvý ročník">
+                                <option value="1A">1.A</option>
+                                <option value="1B">1.B</option>
+                            </optgroup>
+                            <optgroup label="Druhý ročník">
+                                <option value="2A">2.A</option>
+                                <option value="2B">2.B</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-label required-label">Pracovné skúsenosti (roky)</div>
+                    <div class="form-input">
+                        <input type="number" name="skusenosti" min="0" max="40" value="5" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-label">Dostupnosť licencie</div>
+                    <div class="form-input checkbox-group">
+                        <label><input type="checkbox" name="licencia_ppl" value="PPL" checked> PPL</label>
+                        <label><input type="checkbox" name="licencia_cpl" value="CPL"> CPL</label>
+                        <label><input type="checkbox" name="licencia_atpl" value="ATPL"> ATPL</label>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-label">Jazykové znalosti</div>
+                    <div class="form-input checkbox-group">
+                        <label><input type="checkbox" name="jazyk_ins" value="INS" checked> Angličtina (ICAO)</label>
+                        <label><input type="checkbox" name="jazyk_cvm" value="CVM"> Nemčina</label>
+                        <label><input type="checkbox" name="jazyk_cuj" value="CUJ"> Francúzština</label>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Ďalšie informácie</legend>
+                <div class="form-row">
+                    <div class="form-label">Komentáre / poznámky</div>
+                    <div class="form-input">
+                        <textarea name="pripomienky"></textarea>
+                    </div>
+                </div>
+            </fieldset>
+
+            <div class="form-footer">
+                <button type="reset" name="vymazat">Vymazať</button>
+                <button type="submit" name="odoslat">Odoslať</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

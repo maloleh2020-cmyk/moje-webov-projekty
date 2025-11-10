@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oleh Malykh: Osobna karta CSS</title>
+    <link rel="stylesheet" href="style.css">
+    <style type="text/css">
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4; 
+}
+
+        a {
+            color: #007bff; 
+            text-decoration: none;
+}
+
+        .resume-container {
+            max-width: 1000px; 
+            margin: 40px auto;
+            background-color: #fff;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+        .resume-header h1 {
+            font-size: 2em;
+            font-weight: bold;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+}
+
+
+        .main-content {
+            display: flex;
+}
+
+
+        .left-column {
+            flex: 1; 
+            padding-right: 30px;
+            border-right: 1px solid #eee; 
+}
+
+
+        .right-column {
+            flex: 2;  
+            padding-left: 30px;
+}
+
+        .section-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #333;
+}
+
+
+        .profile-photo-wrapper {
+            background-color: #f8f8f8; 
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+}
+
+        .profile-photo {
+            width: 100%;
+            max-width: 200px; 
+            height: auto;
+            display: block;
+            margin: 0 auto;
+}
+
+
+        .details-block p {
+            display: flex;
+            justify-content: space-between;
+            margin: 5px 0;
+}
+
+        .details-block strong {
+            font-weight: bold;
+}
+
+        .details-block .value {
+            color: #555;
+            text-align: right;
+}
+
+
+        .about-me-details {
+            display: flex;
+            flex-wrap: wrap; 
+            gap: 10px 0; 
+}
+
+        .detail-row {
+            display: flex;
+            width: 100%;
+            margin-bottom: 5px;
+}
+
+
+        .detail-row .label {
+            font-weight: bold;
+            width: 120px; 
+            color: #333;
+}
+
+        .detail-row .data {
+            color: #555;
+            flex-grow: 1; 
+            margin-right: 20px;
+}
+
+        .detail-row:nth-child(odd) .data,
+        .detail-row:nth-child(even) .data {
+            width: calc(50% - 120px); 
+}
+
+
+        .detail-row.full-width .label,
+        .detail-row.full-width .data {
+            width: auto;
+            margin-right: 50px; 
+}
+
+        .detail-row.full-width .data:last-child {
+            margin-right: 0;
+}
+
+
+
+        .about-me-text h3 {
+            font-size: 1.4em;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 10px;
+}
+
+        .about-me-text p {
+            color: #666;
+            font-size: 0.9em;
+}
+
+
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+
+    .left-column {
+        padding-right: 0;
+        border-right: none;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+
+    .right-column {
+        padding-left: 0;
+    }
+
+    .details-block {
+        order: 1;
+    }
+
+    .profile-photo-wrapper {
+        order: 2;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <header class="resume-header">
+            <h1>RESUME</h1>
+        </header>
+
+        <div class="main-content">
+            <div class="left-column">
+                <h2 class="section-title">PROFESSIONAL DETAILS</h2>
+                
+                <div class="profile-photo-wrapper">
+                    <img src="resume foto.jpeg" alt="Фото профілю" class="profile-photo">
+                </div>
+
+                <div class="details-block">
+                    <p><strong>NAME</strong><span class="value">Malykh Oleh</span></p>
+                    <p><strong>AGE</strong><span class="value">17 Years</span></p>
+                    <p><strong>LOCATION</strong><span class="value">Košice, Slovakia</span></p>
+                    <p><strong>OŠP</strong><span class="value">Bc-MLD/Pilot-D-1</span></p>
+                </div>
+            </div>
+
+            <div class="right-column">
+                <h2 class="section-title">ABOUT ME</h2>
+                
+                <div class="about-me-details">
+                    <div class="detail-row">
+                        <p class="label">NAME</p><p class="data">Malykh Oleh</p>
+                        <p class="label">AGE</p><p class="data">17 Years</p>
+                    </div>
+                    <div class="detail-row">
+                        <p class="label">LOCATION</p><p class="data">Košice, Slovakia</p>
+                    </div>
+                    <div class="detail-row">
+                        <p class="label">OŠP</p><p class="data">Bc-MLD/Pilot-D-1</p>
+                    </div>
+                    <div class="detail-row">
+                        <p class="label">PHONE</p><p class="data">(095) 232-4041</p>
+                    </div>
+                    <div class="detail-row full-width">
+                        <p class="label">E-MAIL</p><p class="data"><a href="oleh.malykh@student.tuke.sk">oleh.malykh@student.tuke.sk</a></p>
+                        <p class="label">WEBSITE</p><p class="data"><a href="">Moje webové projekty</a></p>
+                    </div>
+                </div>
+
+                <div class="about-me-text">
+                    <h3>I'M STUDENT TUKE</h3>
+                    <p>Som študentom Technickej univerzity v Košiciach (TUKE), kde získavam hĺbkové znalosti z oblasti informačných technológií.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
